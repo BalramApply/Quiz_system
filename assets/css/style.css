@@ -1,0 +1,196 @@
+/* Custom Styles for Quiz System */
+/* Path: assets/css/style.css */
+
+/* General Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.container {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+/* Quiz Card */
+.quiz-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+/* Timer Styles */
+.timer-box {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.timer-warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Question Card */
+.question-card {
+    margin-bottom: 30px;
+}
+
+.option-label {
+    cursor: pointer;
+    padding: 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    display: block;
+}
+
+.option-label:hover {
+    background-color: #e9ecef;
+    border-color: #0d6efd;
+}
+
+.option-label input[type="radio"] {
+    margin-right: 10px;
+}
+
+.option-label input[type="radio"]:checked + .option-text {
+    font-weight: bold;
+}
+
+.option-label:has(input[type="radio"]:checked) {
+    background-color: #cfe2ff;
+    border-color: #0d6efd;
+}
+
+/* Result Styles */
+.result-box {
+    text-align: center;
+    padding: 30px;
+}
+
+.score-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.result-badge {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+/* Table Styles */
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Button Styles */
+.btn-action {
+    margin: 0 5px;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+/* Login/Register Forms */
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+}
+
+.auth-card {
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* Dashboard Cards */
+.stat-card {
+    border-left: 4px solid #0d6efd;
+}
+
+.stat-card .display-4 {
+    color: #0d6efd;
+}
+
+/* Navigation Active State */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timer-box {
+        position: static;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .score-display {
+        font-size: 3rem;
+    }
+}
+
+/* Loading Spinner */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Print Styles */
+@media print {
+    .navbar, footer, .btn, .timer-box {
+        display: none;
+    }
+}
